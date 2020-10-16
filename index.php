@@ -10,6 +10,7 @@
     // get the directory of the blogposts
     $directoryPath = dirname($_SERVER["SCRIPT_FILENAME"]) . "/blogposts";
     $directory = opendir($directoryPath);
+    // setting timezone to australia, melbourne
     date_default_timezone_set('Australia/Melbourne');
     $fileArray = [];
     $timeStampArray = [];
@@ -27,8 +28,27 @@
     array_multisort($timeStampArray, SORT_DESC, $fileArray);
     ?>
     <ul>    
-        <?php foreach($fileArray as $eachFile){ ?>
-            <li><?= $eachFile ?></li>
+        <?php foreach($fileArray as $eachFile){ 
+            // getting file content 
+            $fileFullPath = $directoryPath . "/" . $eachFile;
+            $fileContent = file_get_contents($fileFullPath);
+
+            // generating blog tags
+
+            //stripping off the .txt at the end
+            $onlyFileName = explode(".", $eachFile);
+
+            $tagsArray = explode(" ", $onlyFileName[0]);
+            $tagString = "";
+            // concatenating all tags
+            foreach($tagsArray as $eachTag){
+                // getting rid of underscore, if present
+                $aTag = str_replace("_", " ", $eachTag);
+                $tagString = $tagString . "," . $aTag;
+            }
+
+            ?>
+            <li><?= $fileContent ?> <b>Tags: </b> <?= $tagString ?></li>
         <?php }?>
     </ul>
     <?php closedir($directory); ?>
