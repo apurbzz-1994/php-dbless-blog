@@ -1,0 +1,63 @@
+html, body {
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.side-bar{
+    background-color: black;
+    min-height: 100vh;
+}
+
+.side-bar-title{
+    color: white;
+    padding-top: 3em;
+    padding-left: 0.3em;
+    padding-right: 1em;
+    font-family: 'Gravitas One', cursive;
+}
+
+#mobile-side-bar-title{
+    color: white;
+    text-align: center;
+    padding-top: 1em;
+    font-family: 'Gravitas One', cursive;
+}
+
+.squeeze-text{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+
+#mobile-side-bar-paragraph{
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    text-align: center;
+}
+
+.side-bar-paragraph{
+    color: white;
+    padding-top: 3em;
+    padding-left: 0.3em;
+    padding-right: 1em;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.blog-post{
+    background-color: cornsilk;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.tags{
+    background-color: black;
+    color: white;
+    border-radius: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
