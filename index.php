@@ -77,7 +77,7 @@
                                     if($file == "." || $file ==".." || $file == ".DS_Store")continue;
                                     $fullFilePath = $directoryPath . "/" . $file;
                                      if(is_dir($fullFilePath)){
-                                         $urlPath = "index.php?filename=" . urlencode($file);
+                                         $urlPath = "myBlog.php?filename=" . urlencode($file);
                                          ?>
                                         <!--display each directory-->
                                         <p>

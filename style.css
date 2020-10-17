@@ -1,10 +1,20 @@
+:root{
+    transition: all 0.7s linear; 
+}
+
+.dark-mode{
+    filter: invert(1) hue-rotate(130deg);
+    transition: all 0.7s linear;
+}
+
 html, body {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
+    
 }
 
 .side-bar{
-    background-color: black;
+    background-color: #1e1f1b;
     min-height: 100vh;
 }
 

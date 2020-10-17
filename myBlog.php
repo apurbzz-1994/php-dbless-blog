@@ -49,6 +49,7 @@
                 </div>
                 <div class="side-bar-paragraph">
                     <p>A collection of snippets and anecdotes kept away in a secret folder of my computer</p>
+                    <button id="d-mode-toggle">Enable Dark Mode</button>
                 </div>
             </div>
             <div class="col-12 col-md-9 col-lg-9">
@@ -130,5 +131,10 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById("d-mode-toggle").addEventListener("click", function(){
+            document.documentElement.classList.toggle('dark-mode');
+    });
+    </script>
 </body>
 </html>
