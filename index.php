@@ -83,14 +83,29 @@
                             <!--Render blog post-->
                             <div class="col-12 col-md-6 col-lg-6" style="margin-top: 3em;">
                                 <div class="blog-post">
-                                    <h1>Entry#<?= count($fileArray) - $i  ?></h1>
+                                    <div class="row">
+                                        <div class="col-12 col-md-10 col-lg-10">
+                                            <h2>Entry#<?= count($fileArray) - $i  ?></h2>
+                                        </div>
+                                        <div class="col-12 col-md-2 col-lg-2">
+                                            <!--display icon based on day or night-->
+                                            <?php
+                                            $dayNightState = date("A", $timeStampArray[$i]);
+                                            if($dayNightState == "AM"){ ?>
+                                                <i class="fas fa-sun"></i>
+                                                <i class="fas fa-mug-hot"></i>
+                                            <?php } else{ ?>
+                                                <i class="fas fa-moon"></i>
+                                                <i class="far fa-star"></i>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
                                     <?php
                                     // <-------GENERATING BLOG TAGS----------->
                                     //stripping off the .txt at the end
                                     $onlyFileName = explode(".", $fileArray[$i]);
 
                                     $tagsArray = explode(" ", $onlyFileName[0]);
-                                    //$cleanTagArray = [];
                                     // concatenating all tags
                                     foreach($tagsArray as $eachTag){
                                         // getting rid of underscore, if present
