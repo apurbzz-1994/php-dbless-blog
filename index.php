@@ -52,81 +52,43 @@
                 </div>
             </div>
             <div class="col-12 col-md-9 col-lg-9">
-                <!--Main body-->
-                    <?php
-                    //check the filename in post request
-                    $directoryName = $_GET["filename"];
-
-                    // get the directory of the blogposts
-                    $directoryPath = dirname($_SERVER["SCRIPT_FILENAME"]) . "/blogposts" . "/" . $directoryName;
-                    $directory = opendir($directoryPath);
-                    // setting timezone to australia, melbourne
-                    date_default_timezone_set('Australia/Melbourne');
-                    $fileArray = [];
-                    $timeStampArray = [];
-                    $sortedFileArray = [];
-
-                    // getting all the filenames in an array
-                    while($file = readdir($directory)){
-                        if($file == "." || $file ==".." || $file == ".DS_Store")continue;
-                        $fileFullPath = $directoryPath . "/" . $file;
-                        array_push($fileArray, $file);
-                        array_push($timeStampArray, filectime($fileFullPath));
-                    }
-
-                    // sort the array according to latest
-                    array_multisort($timeStampArray, SORT_DESC, $fileArray);
-                    ?>
-                    <div class = "row" style="margin-bottom: 3em;">    
-                        <?php for($i = 0; $i < count($fileArray); $i++){ 
-                            $fileFullPath = $directoryPath . "/" . $fileArray[$i];
-                            $fileContent = file_get_contents($fileFullPath);
-
-                            ?>
-                            <!--Render blog post-->
-                            <div class="col-12 col-md-6 col-lg-6" style="margin-top: 3em;">
-                                <div class="blog-post">
-                                    <div class="row">
-                                        <div class="col-12 col-md-10 col-lg-10">
-                                            <div>
-                                                <h2>Entry#<?= count($fileArray) - $i  ?></h2>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-2 col-lg-2">
-                                            <div>
-                                                <!--display icon based on day or night-->
-                                                <?php
-                                                $dayNightState = date("A", $timeStampArray[$i]);
-                                                if($dayNightState == "AM"){ ?>
-                                                    <i class="fas fa-sun"></i>
-                                                    <i class="fas fa-mug-hot"></i>
-                                                <?php } else{ ?>
-                                                    <i class="fas fa-moon"></i>
-                                                    <i class="far fa-star"></i>
-                                                <?php } ?>    
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <?php
-                                    // <-------GENERATING BLOG TAGS----------->
-                                    //stripping off the .txt at the end
-                                    $onlyFileName = explode(".", $fileArray[$i]);
-
-                                    $tagsArray = explode(" ", $onlyFileName[0]);
-                                    // concatenating all tags
-                                    foreach($tagsArray as $eachTag){
-                                        // getting rid of underscore, if present
-                                        $aTag = str_replace("_", " ", $eachTag);?>
-                                    <span class="tags"><?= $aTag ?></span>
-                                    <?php } ?>
-                                    <div style = "margin-top: 1em;">
-                                        <p><?= $fileContent ?></p>
+                <div class = "row" style="margin-bottom: 3em;">    
+                    <div class="col-12 col-md-6 col-lg-6" style="margin-top: 3em;">
+                        <div class="blog-post">
+                            <div class="row">
+                                <div class="col-12 col-md-10 col-lg-10">
+                                    <div>
+                                        <h2>Welcome</h2>
                                     </div>
                                 </div>
+                                <div class="col-12 col-md-2 col-lg-2">
+                                                
+                                </div>
                             </div>
-                        <?php }?>
+                            <div style = "margin-top: 1em;">
+                                <p>Please select directory: </p>
+                                <!--Directory code goes here-->
+                                <?php
+                                $directoryPath = dirname($_SERVER["SCRIPT_FILENAME"]) . "/blogposts";
+                                $directory = opendir($directoryPath);
+
+                                //displaying all files
+                                while($file = readdir($directory)){
+                                    if($file == "." || $file ==".." || $file == ".DS_Store")continue;
+                                    $fullFilePath = $directoryPath . "/" . $file;
+                                     if(is_dir($fullFilePath)){
+                                         $urlPath = "index.php?filename=" . urlencode($file);
+                                         ?>
+                                        <!--display each directory-->
+                                        <p>
+                                            <a href="<?= $urlPath ?>"><?= $file ?></a>
+                                        </p>
+                                <?php } //end of if?>
+                                     <?php } //end of while?>
+                            </div>
+                        </div>
                     </div>
-                    <?php closedir($directory); ?>
+                </div>
             </div>
         </div>
     </div>
