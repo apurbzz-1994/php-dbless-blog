@@ -31,6 +31,7 @@
                 </div>
                 <div id="mobile-side-bar-paragraph">
                     <p>A collection of snippets and anecdotes kept away in a secret folder of my computer</p>
+                    <button id="d-mode-toggle">Enable Dark Mode</button>
                 </div>
             </div>
             <div class="col-12 col-md-3 col-lg-3 side-bar d-none d-md-block d-lg-block d-xl-block">
@@ -50,6 +51,9 @@
                 <div class="side-bar-paragraph">
                     <p>A collection of snippets and anecdotes kept away in a secret folder of my computer</p>
                     <button id="d-mode-toggle">Enable Dark Mode</button>
+                </div>
+                <div class="side-bar-paragraph">
+                    <h6>"<?= $_GET["filename"] ?>"</h6>
                 </div>
             </div>
             <div class="col-12 col-md-9 col-lg-9">
