@@ -74,7 +74,7 @@
                     // sort the array according to latest
                     array_multisort($timeStampArray, SORT_DESC, $fileArray);
                     ?>
-                    <div class = "row">    
+                    <div class = "row" style="margin-bottom: 3em;">    
                         <?php for($i = 0; $i < count($fileArray); $i++){ 
                             $fileFullPath = $directoryPath . "/" . $fileArray[$i];
                             $fileContent = file_get_contents($fileFullPath);
@@ -85,19 +85,23 @@
                                 <div class="blog-post">
                                     <div class="row">
                                         <div class="col-12 col-md-10 col-lg-10">
-                                            <h2>Entry#<?= count($fileArray) - $i  ?></h2>
+                                            <div>
+                                                <h2>Entry#<?= count($fileArray) - $i  ?></h2>
+                                            </div>
                                         </div>
                                         <div class="col-12 col-md-2 col-lg-2">
-                                            <!--display icon based on day or night-->
-                                            <?php
-                                            $dayNightState = date("A", $timeStampArray[$i]);
-                                            if($dayNightState == "AM"){ ?>
-                                                <i class="fas fa-sun"></i>
-                                                <i class="fas fa-mug-hot"></i>
-                                            <?php } else{ ?>
-                                                <i class="fas fa-moon"></i>
-                                                <i class="far fa-star"></i>
-                                            <?php } ?>
+                                            <div>
+                                                <!--display icon based on day or night-->
+                                                <?php
+                                                $dayNightState = date("A", $timeStampArray[$i]);
+                                                if($dayNightState == "AM"){ ?>
+                                                    <i class="fas fa-sun"></i>
+                                                    <i class="fas fa-mug-hot"></i>
+                                                <?php } else{ ?>
+                                                    <i class="fas fa-moon"></i>
+                                                    <i class="far fa-star"></i>
+                                                <?php } ?>    
+                                            </div>
                                         </div>
                                     </div>
                                     <?php
