@@ -54,8 +54,11 @@
             <div class="col-12 col-md-9 col-lg-9">
                 <!--Main body-->
                     <?php
+                    //check the filename in post request
+                    $directoryName = $_GET["filename"];
+
                     // get the directory of the blogposts
-                    $directoryPath = dirname($_SERVER["SCRIPT_FILENAME"]) . "/blogposts";
+                    $directoryPath = dirname($_SERVER["SCRIPT_FILENAME"]) . "/blogposts" . "/" . $directoryName;
                     $directory = opendir($directoryPath);
                     // setting timezone to australia, melbourne
                     date_default_timezone_set('Australia/Melbourne');

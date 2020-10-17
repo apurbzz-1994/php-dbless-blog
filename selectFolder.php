@@ -66,9 +66,25 @@
                                 </div>
                             </div>
                             <div style = "margin-top: 1em;">
-                                <p>Please select directory</p>
+                                <p>Please select directory: </p>
                                 <!--Directory code goes here-->
-                                
+                                <?php
+                                $directoryPath = dirname($_SERVER["SCRIPT_FILENAME"]) . "/blogposts";
+                                $directory = opendir($directoryPath);
+
+                                //displaying all files
+                                while($file = readdir($directory)){
+                                    if($file == "." || $file ==".." || $file == ".DS_Store")continue;
+                                    $fullFilePath = $directoryPath . "/" . $file;
+                                     if(is_dir($fullFilePath)){
+                                         $urlPath = "index.php?filename=" . urlencode($file);
+                                         ?>
+                                        <!--display each directory-->
+                                        <p>
+                                            <a href="<?= $urlPath ?>"><?= $file ?></a>
+                                        </p>
+                                <?php } //end of if?>
+                                     <?php } //end of while?>
                             </div>
                         </div>
                     </div>
