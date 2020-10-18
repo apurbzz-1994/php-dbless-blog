@@ -13,7 +13,7 @@ No database, no hassle! A simple way to render all your text files in a super vi
 I basically made this project to practice and get a better understanding of file manipulation in PHP, thaz all! :sweat_smile:
 
 #### Features
-* Select a specific folder from your PHP script directory and instantly view all your text files only within that directory, thus allowing multiple blogs. 
+* Lists all the folders in the PHP script directory and creates a blog view of the folder selected. This allow for mutiple blogs, one folder for each!
 
 ![Main screen](/assets/home.png)
 
