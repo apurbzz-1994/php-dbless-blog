@@ -17,7 +17,7 @@ I basically made this project to practice and get a better understanding of file
 
 ![Main screen](/assets/home.png)
 
-* The application sorts your text files in accordance to the time of creation and displays the latest one first.
+* The application sorts your text files in accordance to the time of creation/update and displays the latest one first.
 
 * Each blog post show icons indicating what time of day (AM/PM) the corresponding file was created and also generates tags based on a predefined filename format (e.g filename - "food vietnamese_bakery cafe good_food.txt").
 
