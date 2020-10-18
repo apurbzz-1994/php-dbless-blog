@@ -3,7 +3,7 @@
 }
 
 .dark-mode{
-    filter: invert(1) hue-rotate(130deg);
+    filter: invert(90%) hue-rotate(800deg);
     transition: all 0.7s linear;
 }
 
@@ -77,6 +77,15 @@ html, body {
     padding-left: 1em;
     padding-right: 1em;
     border-radius: 1em;
-    border-width: 0;
+    border: 0 none;
+    cursor: pointer;
     background-color: cornsilk;
+    outline: none;
 }
+
+.d-mode-toggle:focus{
+    outline: none;
+}
+
+
+

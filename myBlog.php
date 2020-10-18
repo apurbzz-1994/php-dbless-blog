@@ -135,12 +135,6 @@
             </div>
         </div>
     </div>
-    <script>
-        document.querySelectorAll(".d-mode-toggle").forEach(item => {
-            item.addEventListener("click", function(){
-            document.documentElement.classList.toggle('dark-mode');
-        })
-    });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
