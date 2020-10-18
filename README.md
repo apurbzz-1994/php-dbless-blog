@@ -32,5 +32,6 @@ I basically made this project to practice and get a better understanding of file
 * Code needs more refactoring and tidying up.
 * File upload feature.
 * Better error handling.
+* Dark mode colour fixes.
 
 
