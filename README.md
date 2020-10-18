@@ -25,7 +25,7 @@ I basically made this project to practice and get a better understanding of file
 
 * DARK MODE :sunglasses:
 
-![Dark mode](https://media.giphy.com/media/doWcYeCJ3jUz2mwJmx/giphy.gif)
+![Dark mode](https://media.giphy.com/media/2eVKCUafHyZL1Odbt4/giphy.gif)
 
 #### Ongoing
 
