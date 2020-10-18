@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div style = "margin-top: 1em;">
-                                <p>Please select directory: </p>
+                                <p>Please select a folder: </p>
                                 <!--Directory code goes here-->
                                 <?php
                                 $directoryPath = dirname($_SERVER["SCRIPT_FILENAME"]) . "/blogposts";
